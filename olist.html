@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olist Retention Analysis · Victoria Johnson</title>
+<meta name="description" content="A six-query SQL investigation into why 97% of Olist customers purchase exactly once, with an 81-day reactivation window and a seller-level retention finding.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="case">
+<header class="site"><div class="wrap nav">
+  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="on" href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div></header>
+
+<div class="case-head"><div class="wrap">
+  <p class="eyebrow">Case study 01</p>
+  <h1>Olist: why 97% of customers never come back</h1>
+  <div class="meta">
+    <span><b>Tools</b> MySQL, Power BI</span>
+    <span><b>Dataset</b> Olist Brazilian e-commerce (public)</span>
+    <span><b>Scope</b> 93,358 customers, six queries</span>
+    <span><b>Deliverables</b> SQL file, case study, exec summary, engineering report, deck, dashboard</span>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>The question</h2>
+  <p>Olist is a marketplace connecting Brazilian sellers to customers. The business question: what share of customers ever purchase a second time, what separates repeat buyers from one-time buyers, and where is the actionable lever?</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Approach</h2>
+  <p>Six sequential SQL queries in MySQL, structured as an elimination exercise: measure the retention rate, size the value gap between the two groups, then test candidate explanations one by one (product category, review scores, purchase timing, seller) until only defensible causes remain. The import required engineering work of its own: converting TEXT columns to VARCHAR to enable indexing, then creating indexes that brought the heaviest query to an 8.13 second runtime. <span class="chip">Engineering report</span></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Findings</h2>
+  <div class="finding">
+    <h3><span class="num">97%</span> of customers purchase exactly once</h3>
+    <p>Of 93,358 customers, only about 3% ever return. Retention, not acquisition, is the structural problem. <span class="chip">olist_analysis.sql · Q1</span></p>
+  </div>
+  <div class="finding">
+    <h3>Repeat customers spend <span class="num">92%</span> more</h3>
+    <p>R$308.53 average total spend per repeat customer versus R$160.74 per one-time customer, which sizes the prize for moving even a small share of customers into a second purchase. <span class="chip">olist_analysis.sql · Q2</span></p>
+  </div>
+  <div class="finding">
+    <h3>Product and service are ruled out</h3>
+    <p>Top product categories are nearly identical between one-time and repeat buyers, and average review scores are nearly identical as well (4.15 versus 4.21). Whatever drives churn, it is not visibly what customers bought or how they rated the experience. <span class="chip">olist_analysis.sql · Q3, Q4</span></p>
+  </div>
+  <div class="finding">
+    <h3>The window: <span class="num">81.2 days</span> to the second purchase</h3>
+    <p>Customers who do return take 81.2 days on average to buy again, noticeably longer than the roughly 60 to 63 day gaps between later purchases. The data suggests the first 60 to 80 days after an initial order is the critical period. <span class="chip">olist_analysis.sql · Q5</span></p>
+  </div>
+  <div class="finding">
+    <h3>Secondary finding: a seller-level retention gap of <span class="num">4 to 8x</span></h3>
+    <p>Ranking sellers with 50 or more customers by repeat rate, a small group retains 12 to 23 percent of their customers against a platform average of 2.76 percent. Location, category, and review scores were all ruled out as explanations, which points to a real seller-specific practice this dataset cannot name. <span class="chip">olist_analysis.sql · Q6</span></p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Recommendation</h2>
+  <p>Run a reactivation campaign timed to day 55 to 65 after first purchase, ahead of the 81-day window closing. Do not spend on product or service fixes to drive retention, since both were ruled out as differentiators. Commission a seller operations audit to identify what the high-retention sellers do differently, since the cause is not observable in this dataset.</p>
+  <div class="caveat"><b>What this analysis does not claim.</b> The dataset cannot confirm why high-retention sellers outperform, and the hypothesis that repeat buyers may be purchasing for others is stated in the case study as unproven. No implementation results are claimed; this project was analysis on a public dataset, not a live engagement.</div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Dashboard</h2>
+  <figure class="shot">
+    <img src="assets/olist-dashboard.jpg" alt="Power BI retention dashboard: KPIs, purchase frequency, spend by customer type, and the 81-day gap" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    <figcaption>Power BI retention dashboard: KPIs, purchase frequency, spend by customer type, and the 81-day gap</figcaption>
+  </figure>
+  <h2 style="margin-top:44px">Artifacts</h2>
+  <ul class="artifact-list">
+    <li>olist_analysis.sql, six documented queries</li>
+    <li>Case study, six sections with four recommendations</li>
+    <li>Executive summary and engineering report</li>
+    <li>Seven-slide presentation deck and Power BI dashboard</li>
+  </ul>
+  <div class="btn-row" style="margin-top:22px">
+    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/olist">Open project folder</a>
+    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+  </div>
+</div></section>
+
+<div class="wrap pager">
+  <a class="prev" href="projects.html"><small>Previous</small>All projects</a>
+  <a class="next" href="vrinda.html"><small>Next</small>Vrinda Store</a>
+</div>
+
+<footer><div class="wrap foot">
+  <span>© 2026 Victoria Johnson</span>
+  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
+  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
+</div></footer>
+</body>
+</html>

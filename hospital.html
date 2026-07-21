@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital ER Operations · Victoria Johnson</title>
+<meta name="description" content="An emergency department operations analysis built in Excel with an interactive dashboard, data audit report, and executive summary.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="case">
+<header class="site"><div class="wrap nav">
+  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="on" href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div></header>
+
+<div class="case-head"><div class="wrap">
+  <p class="eyebrow">Case study 04</p>
+  <h1>Hospital ER: operations under load</h1>
+  <div class="meta">
+    <span><b>Tools</b> Excel, Power Query, Power BI</span>
+    <span><b>Dataset</b> Public hospital emergency department records</span>
+    <span><b>Deliverables</b> Interactive dashboard, data audit report, exec summary, deck, README</span>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>The question</h2>
+  <p>Emergency departments live or die on throughput: how long patients wait, who gets admitted, and which departments carry the load. The question here: what do admissions, wait patterns, and departmental referrals reveal about where an ER's operational pressure sits, and where would a manager intervene first?</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Approach</h2>
+  <p>The raw records were cleaned and shaped in Power Query, then audited before analysis: the data audit report documents the quality checks, assumptions, and exclusions made before a single chart was built. The interactive Excel dashboard tracks admission status, wait time patterns, patient demographics, and departmental referral load, and the executive summary walks a non-technical reader from the business question to three findings and recommendations. <span class="chip">Hospital audit report · exec summary</span></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What it demonstrates</h2>
+  <div class="finding">
+    <h3>Data quality work shown, not hidden</h3>
+    <p>Most portfolio dashboards skip straight to visuals. This project publishes its audit trail: what was checked, what was excluded, and why, so every downstream figure has a documented basis. <span class="chip">Hospital audit report</span></p>
+  </div>
+  <div class="finding">
+    <h3><span class="num">10,100</span> visits, a 31-minute average wait, and an 8.81% long-wait tail</h3>
+    <p>The dashboard tracks a 42.45% admission rate and 8.99% readmission rate, and isolates the 8.81% of visits waiting over 60 minutes, then breaks that tail down by department, shift, triage level, and hour so a manager can see where the queue actually forms. <span class="chip">Hospital dashboard · Wait Time page</span></p>
+  </div>
+  <div class="finding">
+    <h3>Operations analysis outside sales</h3>
+    <p>Wait times, admission mix, and departmental load are operational KPIs, not revenue ones. The project demonstrates the same question-to-recommendation discipline applied to a healthcare operations setting. <span class="chip">Hospital exec summary</span></p>
+  </div>
+  <div class="caveat"><b>What this analysis does not claim.</b> This is a public practice dataset; no real hospital's operations were assessed and no implementation results are claimed. Specific KPI figures live in the executive summary and dashboard rather than being quoted here without their context.</div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Dashboard</h2>
+  <figure class="shot">
+    <img src="assets/hospital-1-executive.jpg" alt="Executive overview: 10,100 visits, wait time, admission and readmission rates" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    <figcaption>Executive overview: 10,100 visits, wait time, admission and readmission rates</figcaption>
+  </figure>
+  <figure class="shot">
+    <img src="assets/hospital-2-wait-time.jpg" alt="Wait time analysis by department, shift, triage level, and hour of day" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    <figcaption>Wait time analysis by department, shift, triage level, and hour of day</figcaption>
+  </figure>
+  <figure class="shot">
+    <img src="assets/hospital-3-satisfaction.jpg" alt="Patient satisfaction analysis across departments, shifts, and wait time groups" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    <figcaption>Patient satisfaction analysis across departments, shifts, and wait time groups</figcaption>
+  </figure>
+  <figure class="shot">
+    <img src="assets/hospital-4-demographics.jpg" alt="Patient demographics: age, gender, and departmental profiles" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    <figcaption>Patient demographics: age, gender, and departmental profiles</figcaption>
+  </figure>
+  <h2 style="margin-top:44px">Artifacts</h2>
+  <ul class="artifact-list">
+    <li>Interactive Excel dashboard workbook</li>
+    <li>Data audit report</li>
+    <li>Executive summary with KPI and skills tables</li>
+    <li>Eight-slide presentation deck and README</li>
+  </ul>
+  <div class="btn-row" style="margin-top:22px">
+    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/hospital-er">Open project folder</a>
+    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+  </div>
+</div></section>
+
+<div class="wrap pager">
+  <a class="prev" href="superstore.html"><small>Previous</small>Global Superstore</a>
+  <a class="next" href="london-crime.html"><small>Next</small>London Transport Crime</a>
+</div>
+
+<footer><div class="wrap foot">
+  <span>© 2026 Victoria Johnson</span>
+  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
+  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
+</div></footer>
+</body>
+</html>

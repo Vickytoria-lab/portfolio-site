@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vrinda Store Revenue Diagnostics · Victoria Johnson</title>
+<meta name="description" content="A 31,047-row SQL investigation into a retail revenue decline, ending in a quantified recovery recommendation.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="case">
+<header class="site"><div class="wrap nav">
+  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="on" href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div></header>
+
+<div class="case-head"><div class="wrap">
+  <p class="eyebrow">Case study 02</p>
+  <h1>Vrinda Store: diagnosing a revenue decline</h1>
+  <div class="meta">
+    <span><b>Tools</b> SQL, Excel</span>
+    <span><b>Dataset</b> Vrinda Store orders (public), 31,047 rows</span>
+    <span><b>Deliverables</b> SQL investigation, ten-page case study, deck, README</span>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>The question</h2>
+  <p>Order-level data for an online clothing store showed revenue falling. The question: where exactly is the decline concentrated, across channels, categories, geography, and customer segments, and what would it take to recover it?</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Approach</h2>
+  <p>A full SQL investigation over 31,047 order rows, segmenting revenue by sales channel, product category, demographic group, and order status, then isolating which segments account for the decline rather than averaging it away. The findings and the recovery math are documented step by step in a ten-page case study so a reviewer can trace every figure back to a query. <span class="chip">Vrinda case study</span></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Outcome</h2>
+  <div class="finding">
+    <h3>A quantified recovery recommendation of roughly <span class="num">Rs. 2M</span></h3>
+    <p>The investigation ends in a recovery estimate of approximately Rs. 2 million, built from the identified decline segments, with the supporting math shown in the case study and presentation deck rather than asserted. <span class="chip">Vrinda case study · deck</span></p>
+  </div>
+  <div class="caveat"><b>What this analysis does not claim.</b> This is a public practice dataset. The recovery figure is a modeled estimate under stated assumptions, not a measured business result, and the case study frames it that way.</div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Dashboard</h2>
+  <figure class="shot">
+    <img src="assets/vrinda-dashboard.jpg" alt="Revenue performance dashboard: Rs. 21.2M total revenue, the March-to-November decline, channel and category breakdowns" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    <figcaption>Revenue performance dashboard: Rs. 21.2M total revenue, the March-to-November decline, channel and category breakdowns</figcaption>
+  </figure>
+  <h2 style="margin-top:44px">Artifacts</h2>
+  <ul class="artifact-list">
+    <li>SQL investigation file</li>
+    <li>Ten-page case study with quantified recommendation</li>
+    <li>Seven-slide presentation deck and README</li>
+  </ul>
+  <div class="btn-row" style="margin-top:22px">
+    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/vrinda">Open project folder</a>
+    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+  </div>
+</div></section>
+
+<div class="wrap pager">
+  <a class="prev" href="olist.html"><small>Previous</small>Olist retention</a>
+  <a class="next" href="superstore.html"><small>Next</small>Global Superstore</a>
+</div>
+
+<footer><div class="wrap foot">
+  <span>© 2026 Victoria Johnson</span>
+  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
+  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
+</div></footer>
+</body>
+</html>
