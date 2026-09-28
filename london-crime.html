@@ -3,99 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>London Transport Crime Analysis · Victoria Johnson</title>
-<meta name="description" content="Fifteen fiscal years of TfL crime data, 904,790 reported incidents, analyzed in Tableau across transport modes and seasonal patterns.">
+<title>London Transport Crime Analysis | Victoria Johnson</title>
+<meta name="description" content="Tableau analysis of 904,790 reported crimes on London's transport network over 15 fiscal years.">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="case">
-<header class="site"><div class="wrap nav">
-  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="on" href="projects.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div></header>
+<body>
 
-<div class="case-head"><div class="wrap">
-  <p class="eyebrow">Case study 05</p>
-  <h1>London transport crime: fifteen years of pattern</h1>
-  <div class="meta">
-    <span><b>Tools</b> Tableau, Excel</span>
-    <span><b>Dataset</b> TfL transport crime, FY2009/10 to FY2023/24</span>
-    <span><b>Scope</b> 904,790 reported crimes</span>
-    <span><b>Deliverables</b> Three Tableau dashboards, deck, one-page exec summary</span>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Victoria Johnson</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</div></div>
+</header>
 
-<section><div class="wrap">
-  <h2>The question</h2>
-  <p>Where does crime concentrate across London's transport network, how has it moved over fifteen fiscal years, and what would that mean for how policing and surveillance resources are allocated?</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Approach</h2>
-  <p>Three Tableau dashboards built as a drill-down: an executive overview, a trend analysis with a monthly heat map, and an advanced view of mode-level concentration. The deck pairs each dashboard with its findings and closes with resourcing recommendations. <span class="chip">TfL deck · exec summary</span></p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Findings</h2>
-  <div class="finding">
-    <h3><span class="num">904,790</span> reported crimes, concentrated in few modes</h3>
-    <p>Bus accounts for 53.5% of reported crimes (270,107 incidents), with London Underground carrying the second-highest volume at 108,498. Crime distribution is concentrated rather than spread evenly across the network. <span class="chip">TfL exec summary</span></p>
+<section class="page-top case-top">
+  <div class="container">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="card-label">Public sector &middot; Transport</p>
+    <h1>London transport crime over 15 years</h1>
+    <p class="question">Where does crime happen most on London's transport network, how has it changed over 15 years, and where should police and security resources go?</p>
+    <div class="case-meta">
+      <span><strong>Tools:</strong> Tableau, Excel</span>
+      <span><strong>Data:</strong> Transport for London (TfL) crime data, FY2009/10 to FY2023/24</span>
+      <span><strong>Size:</strong> 904,790 reported crimes</span>
+    </div>
   </div>
-  <div class="finding">
-    <h3>A seasonal pattern that repeats</h3>
-    <p>The monthly heat map shows recurring patterns year over year, with crime peaking around October and November. The top crime months cluster toward the end of the calendar year. <span class="chip">TfL trend dashboard</span></p>
+</section>
+
+<section class="page-content">
+  <div class="container">
+    <figure class="case-image">
+      <img src="assets/london-1-executive.jpg" alt="London transport crime executive overview dashboard built in Tableau">
+      <figcaption>Executive overview: total crimes, crime rate by mode and crimes by transport mode.</figcaption>
+    </figure>
   </div>
-  <div class="finding">
-    <h3>A rising long-run trend</h3>
-    <p>Crime volume generally increased over the study period, with FY2023/24 recording the highest volume of the fifteen years analyzed. <span class="chip">TfL trend dashboard</span></p>
+</section>
+
+<section class="bg-light">
+  <div class="container">
+    <h2>Key numbers</h2>
+    <div class="key-numbers">
+      <div class="number-box"><strong>904,790</strong><span>reported crimes over 15 fiscal years</span></div>
+      <div class="number-box"><strong>270,107</strong><span>crimes on buses, the highest of any mode</span></div>
+      <div class="number-box"><strong>+134%</strong><span>more crimes in 2023/24 than in 2009/10</span></div>
+      <div class="number-box"><strong>Nov</strong><span>the peak month, with Oct and Mar close behind</span></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <h2>Recommendation</h2>
-  <p>Weight police presence toward buses during the October and November peak, focus surveillance on the highest-volume Underground routes, and hold a yearly trend review so any intervention's effect is measured against the fifteen-year baseline rather than a single year.</p>
-  <div class="caveat"><b>What this analysis does not claim.</b> Reported crime is not the same as total crime, and the dataset's average crime rate metric depends on TfL's own exposure basis, so rate comparisons are treated more cautiously than volume comparisons in the write-up. This is a public dataset project, and no policing outcomes are claimed.</div>
-</div></section>
+<section>
+  <div class="container case-text">
+    <h2>Why I picked this question</h2>
+    <p>I wanted to work with a large public dataset and answer a resourcing question: with limited staff, where do you put them? It's the same kind of question as deciding which accounts a sales team should focus on, just with police officers instead of sales reps.</p>
 
-<section><div class="wrap">
-  <h2>Dashboard</h2>
-  <figure class="shot">
-    <img src="london-1-executive.jpg" alt="Executive overview: 904,790 total crimes, mode volumes, and crime rate by mode" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Executive overview: 904,790 total crimes, mode volumes, and crime rate by mode</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="london-2-trends.jpg" alt="Trend analysis: fiscal year trend, monthly heat map, and top crime months" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Trend analysis: fiscal year trend, monthly heat map, and top crime months</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="london-3-advanced.jpg" alt="Advanced analytics: crime share, top modes, and the volume-versus-rate risk matrix" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Advanced analytics: crime share, top modes, and the volume-versus-rate risk matrix</figcaption>
-  </figure>
-  <h2 style="margin-top:44px">Artifacts</h2>
-  <ul class="artifact-list">
-    <li>Three Tableau dashboards: overview, trends, advanced analytics</li>
-    <li>Seven-slide presentation deck</li>
-    <li>One-page executive summary</li>
-  </ul>
-  <div class="btn-row" style="margin-top:22px">
-    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/london-crime">Open project folder</a>
-    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+    <h2>How I approached it</h2>
+    <ol>
+      <li>Prepared the TfL crime data in Excel.</li>
+      <li>Built 3 Tableau dashboards: an executive overview, a trend analysis with a monthly heat map, and a risk view comparing crime volume with crime rate.</li>
+      <li>Summarised the findings and recommendations in a short presentation and one-page summary.</li>
+    </ol>
+
+    <h2>What I found</h2>
+
+    <h3>1. Buses carry the most crime by volume</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Transport mode</th><th class="num">Reported crimes</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>Bus</td><td class="num">270,107</td></tr>
+        <tr><td>London Underground</td><td class="num">108,498</td></tr>
+        <tr><td>London Underground / DLR</td><td class="num">97,527</td></tr>
+        <tr><td>London Overground</td><td class="num">17,249</td></tr>
+        <tr><td>Docklands Light Railway</td><td class="num">4,927</td></tr>
+      </tbody>
+    </table></div>
+    <p>Buses have by far the most reported crimes. This is likely linked to buses carrying more passengers than any other mode, which is why I also looked at crime rate.</p>
+
+    <h3>2. The Underground has the highest crime rate</h3>
+    <p>Volume isn't the whole story. When crime is measured as a rate rather than a total, the London Underground comes out highest. So the Underground needs attention even though buses have more crimes in total.</p>
+
+    <h3>3. Crime has more than doubled, with a clear seasonal pattern</h3>
+    <p>Yearly reported crime grew from 40,570 in FY2009/10 to 95,036 in FY2023/24, the highest year in the data. The only big dip was FY2020/21 (37,866), most likely because lockdowns cut travel. Across all years, November is the peak month (83,988 crimes), followed by March and October.</p>
+
+    <h2>What I would recommend</h2>
+    <ol>
+      <li><strong>Put more patrols on buses</strong>, especially in October and November.</li>
+      <li><strong>Focus surveillance on the Underground</strong>, where the crime rate is highest.</li>
+      <li><strong>Review the numbers every year</strong> against the 15-year trend, so the effect of any change can be measured.</li>
+    </ol>
+
+    <h2>What I'd look at next</h2>
+    <p>This data only covers reported crime, so some crimes are missing. I'd also add passenger numbers for each mode, so every mode can be compared fairly per journey.</p>
   </div>
-</div></section>
+</section>
 
-<div class="wrap pager">
-  <a class="prev" href="hospital.html"><small>Previous</small>Hospital ER</a>
-  <a class="next" href="projects.html"><small>Back to</small>All projects</a>
-</div>
+<section class="bg-light">
+  <div class="container">
+    <h2>More from the dashboards</h2>
+    <div class="gallery">
+      <figure class="case-image">
+        <img src="assets/london-3-advanced.jpg" alt="Advanced analytics dashboard in Tableau with risk matrix" loading="lazy">
+        <figcaption>Risk matrix: crime volume against crime rate for each mode.</figcaption>
+      </figure>
+    </div>
+    <div class="project-links" style="margin-top: 32px;">
+      <a class="btn btn-primary" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/london-crime">View files on GitHub</a>
+    </div>
+  </div>
+</section>
 
-<footer><div class="wrap foot">
-  <span>© 2026 Victoria Johnson</span>
-  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
-  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
-</div></footer>
+<section class="next-section">
+  <div class="container next-project">
+    <a href="hospital.html">&larr; Previous: Hospital ER</a>
+    <a href="projects.html">Back to all projects &rarr;</a>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-box">
+    <h2>Let's talk</h2>
+    <p>Open to remote Business Analyst, Data Analyst, BI and Sales or Revenue Operations roles. The fastest way to reach me is by email.</p>
+    <div class="buttons">
+      <a class="btn btn-white" href="mailto:Johnsonfisayo090@gmail.com">Email me</a>
+      <a class="btn btn-outline-white" href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Victoria Johnson</span>
+    <span>
+      <a href="mailto:Johnsonfisayo090@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+      <a href="https://github.com/Vickytoria-lab">GitHub</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>

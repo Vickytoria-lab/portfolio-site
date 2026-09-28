@@ -3,100 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Olist Retention Analysis · Victoria Johnson</title>
-<meta name="description" content="A six-query SQL investigation into why 97% of Olist customers purchase exactly once, with an 81-day reactivation window and a seller-level retention finding.">
+<title>Olist Customer Retention | Victoria Johnson</title>
+<meta name="description" content="SQL analysis of 93,358 Olist customers: why 97% never buy again, and what the business could do about it.">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="case">
-<header class="site"><div class="wrap nav">
-  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="on" href="projects.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div></header>
+<body>
 
-<div class="case-head"><div class="wrap">
-  <p class="eyebrow">Case study 01</p>
-  <h1>Olist: why 97% of customers never come back</h1>
-  <div class="meta">
-    <span><b>Tools</b> MySQL, Power BI</span>
-    <span><b>Dataset</b> Olist Brazilian e-commerce (public)</span>
-    <span><b>Scope</b> 93,358 customers, six queries</span>
-    <span><b>Deliverables</b> SQL file, case study, exec summary, engineering report, deck, dashboard</span>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Victoria Johnson</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</div></div>
+</header>
 
-<section><div class="wrap">
-  <h2>The question</h2>
-  <p>Olist is a marketplace connecting Brazilian sellers to customers. The business question: what share of customers ever purchase a second time, what separates repeat buyers from one-time buyers, and where is the actionable lever?</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Approach</h2>
-  <p>Six sequential SQL queries in MySQL, structured as an elimination exercise: measure the retention rate, size the value gap between the two groups, then test candidate explanations one by one (product category, review scores, purchase timing, seller) until only defensible causes remain. The import required engineering work of its own: converting TEXT columns to VARCHAR to enable indexing, then creating indexes that brought the heaviest query to an 8.13 second runtime. <span class="chip">Engineering report</span></p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Findings</h2>
-  <div class="finding">
-    <h3><span class="num">97%</span> of customers purchase exactly once</h3>
-    <p>Of 93,358 customers, only about 3% ever return. Retention, not acquisition, is the structural problem. <span class="chip">olist_analysis.sql · Q1</span></p>
+<section class="page-top case-top">
+  <div class="container">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="card-label">E-commerce &middot; Customer retention</p>
+    <h1>Olist: why 97% of customers never buy again</h1>
+    <p class="question">What separates one-time buyers from repeat customers, and where should Olist focus to get more second purchases?</p>
+    <div class="case-meta">
+      <span><strong>Tools:</strong> MySQL, Python (pandas), Power BI</span>
+      <span><strong>Data:</strong> Olist Brazilian E-Commerce, public dataset (Kaggle)</span>
+      <span><strong>Size:</strong> 99,441 orders, 93,358 customers</span>
+    </div>
   </div>
-  <div class="finding">
-    <h3>Repeat customers spend <span class="num">92%</span> more</h3>
-    <p>R$308.53 average total spend per repeat customer versus R$160.74 per one-time customer, which sizes the prize for moving even a small share of customers into a second purchase. <span class="chip">olist_analysis.sql · Q2</span></p>
-  </div>
-  <div class="finding">
-    <h3>Product and service are ruled out</h3>
-    <p>Top product categories are nearly identical between one-time and repeat buyers, and average review scores are nearly identical as well (4.15 versus 4.21). Whatever drives churn, it is not visibly what customers bought or how they rated the experience. <span class="chip">olist_analysis.sql · Q3, Q4</span></p>
-  </div>
-  <div class="finding">
-    <h3>The window: <span class="num">81.2 days</span> to the second purchase</h3>
-    <p>Customers who do return take 81.2 days on average to buy again, noticeably longer than the roughly 60 to 63 day gaps between later purchases. The data suggests the first 60 to 80 days after an initial order is the critical period. <span class="chip">olist_analysis.sql · Q5</span></p>
-  </div>
-  <div class="finding">
-    <h3>Secondary finding: a seller-level retention gap of <span class="num">4 to 8x</span></h3>
-    <p>Ranking sellers with 50 or more customers by repeat rate, a small group retains 12 to 23 percent of their customers against a platform average of 2.76 percent. Location, category, and review scores were all ruled out as explanations, which points to a real seller-specific practice this dataset cannot name. <span class="chip">olist_analysis.sql · Q6</span></p>
-  </div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <h2>Recommendation</h2>
-  <p>Run a reactivation campaign timed to day 55 to 65 after first purchase, ahead of the 81-day window closing. Do not spend on product or service fixes to drive retention, since both were ruled out as differentiators. Commission a seller operations audit to identify what the high-retention sellers do differently, since the cause is not observable in this dataset.</p>
-  <div class="caveat"><b>What this analysis does not claim.</b> The dataset cannot confirm why high-retention sellers outperform, and the hypothesis that repeat buyers may be purchasing for others is stated in the case study as unproven. No implementation results are claimed; this project was analysis on a public dataset, not a live engagement.</div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Dashboard</h2>
-  <figure class="shot">
-    <img src="olist-dashboard.jpg" alt="Power BI retention dashboard: KPIs, purchase frequency, spend by customer type, and the 81-day gap" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Power BI retention dashboard: KPIs, purchase frequency, spend by customer type, and the 81-day gap</figcaption>
-  </figure>
-  <h2 style="margin-top:44px">Artifacts</h2>
-  <ul class="artifact-list">
-    <li>olist_analysis.sql, six documented queries</li>
-    <li>Case study, six sections with four recommendations</li>
-    <li>Executive summary and engineering report</li>
-    <li>Seven-slide presentation deck and Power BI dashboard</li>
-  </ul>
-  <div class="btn-row" style="margin-top:22px">
-    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/olist">Open project folder</a>
-    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+<section class="page-content">
+  <div class="container">
+    <figure class="case-image">
+      <img src="assets/olist-dashboard.jpg" alt="Olist customer retention dashboard built in Power BI">
+      <figcaption>Power BI dashboard summarising the retention analysis.</figcaption>
+    </figure>
   </div>
-</div></section>
+</section>
 
-<div class="wrap pager">
-  <a class="prev" href="projects.html"><small>Previous</small>All projects</a>
-  <a class="next" href="vrinda.html"><small>Next</small>Vrinda Store</a>
-</div>
+<section class="bg-light">
+  <div class="container">
+    <h2>Key numbers</h2>
+    <div class="key-numbers">
+      <div class="number-box"><strong>97%</strong><span>of customers placed only one order</span></div>
+      <div class="number-box"><strong>+92%</strong><span>more spent by repeat customers (R$308.53 vs R$160.74)</span></div>
+      <div class="number-box"><strong>81 days</strong><span>average wait before a second purchase</span></div>
+      <div class="number-box"><strong>22.7%</strong><span>best seller repeat rate vs 2.76% average</span></div>
+    </div>
+  </div>
+</section>
 
-<footer><div class="wrap foot">
-  <span>© 2026 Victoria Johnson</span>
-  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
-  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
-</div></footer>
+<section>
+  <div class="container case-text">
+    <h2>Why I picked this question</h2>
+    <p>Olist is a Brazilian marketplace that connects small sellers with customers. In sales, I learned that winning a second order from a customer is usually cheaper than finding a new one. So before looking at anything else, I wanted to know how many Olist customers actually come back, and whether the ones who do are worth chasing.</p>
+
+    <h2>How I approached it</h2>
+    <ol>
+      <li>Loaded the 8 raw tables into MySQL using Python (pandas), and kept only delivered orders.</li>
+      <li>Measured how often customers buy, then compared spend between one-time and repeat buyers.</li>
+      <li>Tested the obvious explanations first: do repeat buyers buy different products, or rate their experience higher?</li>
+      <li>Measured the gap between purchases to find when customers come back.</li>
+      <li>Compared repeat rates between sellers, then built a Power BI dashboard to summarise it all.</li>
+    </ol>
+
+    <h2>What I found</h2>
+
+    <h3>1. Almost nobody comes back</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Orders placed</th><th class="num">Customers</th><th class="num">% of customers</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>1</td><td class="num">90,557</td><td class="num">97.00%</td></tr>
+        <tr><td>2</td><td class="num">2,573</td><td class="num">2.76%</td></tr>
+        <tr><td>3</td><td class="num">181</td><td class="num">0.19%</td></tr>
+        <tr><td>4 or more</td><td class="num">47</td><td class="num">0.05%</td></tr>
+      </tbody>
+    </table></div>
+    <p>Only 2,801 customers ordered more than once during the period in the data.</p>
+    <details><summary>Show SQL: order frequency</summary>
+<pre>WITH customer_orders AS (
+  SELECT c.customer_unique_id,
+         COUNT(DISTINCT o.order_id) AS order_count
+  FROM customers c
+  JOIN orders o ON c.customer_id = o.customer_id
+  WHERE o.order_status = 'delivered'
+  GROUP BY c.customer_unique_id
+)
+SELECT order_count,
+       COUNT(*) AS number_of_customers,
+       ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS pct_of_customers
+FROM customer_orders
+GROUP BY order_count
+ORDER BY order_count;</pre>
+    </details>
+
+    <h3>2. The few who return are worth a lot more</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Customer type</th><th class="num">Customers</th><th class="num">Share of revenue</th><th class="num">Average spend</th></tr></thead>
+      <tbody>
+        <tr><td>One-time</td><td class="num">90,557</td><td class="num">94.4%</td><td class="num">R$160.74</td></tr>
+        <tr class="highlight"><td>Repeat</td><td class="num">2,801</td><td class="num">5.6%</td><td class="num">R$308.53</td></tr>
+      </tbody>
+    </table></div>
+    <p>Repeat customers spent about 92% more per person. Even a small increase in second purchases would matter.</p>
+
+    <h3>3. It isn't the products or the service</h3>
+    <p>Four of the top five categories were the same for both groups (health and beauty, home and bath, sports and leisure, computer accessories). Average review scores were almost identical too: <strong>4.15</strong> for one-time buyers and <strong>4.21</strong> for repeat buyers. So fixing products or service quality is unlikely to bring people back on its own.</p>
+
+    <h3>4. Timing matters</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Purchase</th><th class="num">Customers</th><th class="num">Average days since previous</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>2nd</td><td class="num">2,801</td><td class="num">81.2</td></tr>
+        <tr><td>3rd</td><td class="num">228</td><td class="num">62.8</td></tr>
+        <tr><td>4th</td><td class="num">47</td><td class="num">60.6</td></tr>
+        <tr><td>5th</td><td class="num">19</td><td class="num">61.2</td></tr>
+      </tbody>
+    </table></div>
+    <p>The second purchase takes the longest, about 81 days. After that, gaps settle at around 61 to 63 days. Getting the second order is the hard part.</p>
+    <details><summary>Show SQL: days between purchases</summary>
+<pre>WITH customer_orders AS (
+  SELECT c.customer_unique_id, o.order_purchase_timestamp,
+    ROW_NUMBER() OVER (PARTITION BY c.customer_unique_id
+      ORDER BY o.order_purchase_timestamp) AS order_sequence,
+    LAG(o.order_purchase_timestamp) OVER (PARTITION BY c.customer_unique_id
+      ORDER BY o.order_purchase_timestamp) AS previous_order_date
+  FROM customers c
+  JOIN orders o ON c.customer_id = o.customer_id
+  WHERE o.order_status = 'delivered'
+)
+SELECT order_sequence,
+       COUNT(*) AS customers_at_this_order,
+       ROUND(AVG(DATEDIFF(order_purchase_timestamp, previous_order_date)), 1) AS avg_days
+FROM customer_orders
+WHERE order_sequence &gt; 1
+GROUP BY order_sequence
+ORDER BY order_sequence
+LIMIT 5;</pre>
+    </details>
+
+    <h3>5. Some sellers keep customers much better than others</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Seller location</th><th class="num">Customers</th><th class="num">Repeat rate</th></tr></thead>
+      <tbody>
+        <tr class="highlight"><td>S&atilde;o Jos&eacute; dos Campos, SP</td><td class="num">88</td><td class="num">22.73%</td></tr>
+        <tr><td>S&atilde;o Paulo, SP</td><td class="num">58</td><td class="num">22.41%</td></tr>
+        <tr><td>Porto Ferreira, SP</td><td class="num">68</td><td class="num">17.65%</td></tr>
+        <tr><td>Platform average</td><td class="num">93,358</td><td class="num">2.76%</td></tr>
+      </tbody>
+    </table></div>
+    <p>Among sellers with 50+ customers, the best kept up to 8 times more customers than the platform average. Location, category and reviews didn't explain it, so these sellers are worth studying.</p>
+
+    <h2>What I would recommend</h2>
+    <ol>
+      <li><strong>Test a win-back message around day 55 to 65</strong> after the first order, before the average second purchase at day 81. Measure it against a control group.</li>
+      <li><strong>Learn from the best sellers.</strong> Compare their delivery, pricing and follow-up with similar sellers who don't retain customers.</li>
+      <li><strong>Track retention by monthly cohort</strong> so the business can see whether it improves over time.</li>
+    </ol>
+
+    <h2>What I'd look at next</h2>
+    <p>Customers who bought near the end of the dataset had less time to come back, so tracking cohorts over the same time window would give a fairer picture. I'd also add delivery times, late deliveries and freight costs to see whether they explain some of the churn.</p>
+
+    <h2>A problem I had to solve first</h2>
+    <p>My first import stored IDs and dates as TEXT, so MySQL couldn't index them and my five-table joins kept timing out. I re-imported all 8 tables with the right data types (VARCHAR for IDs, DATETIME for dates), added 14 indexes, and the same query then ran in 8.13 seconds.</p>
+
+    <div class="project-links">
+      <a class="btn btn-primary" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/olist">View SQL and files on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light next-section">
+  <div class="container next-project">
+    <a href="vrinda.html">&larr; Previous: Vrinda Store</a>
+    <a href="hospital.html">Next project: Hospital ER &rarr;</a>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-box">
+    <h2>Let's talk</h2>
+    <p>Open to remote Business Analyst, Data Analyst, BI and Sales or Revenue Operations roles. The fastest way to reach me is by email.</p>
+    <div class="buttons">
+      <a class="btn btn-white" href="mailto:Johnsonfisayo090@gmail.com">Email me</a>
+      <a class="btn btn-outline-white" href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Victoria Johnson</span>
+    <span>
+      <a href="mailto:Johnsonfisayo090@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+      <a href="https://github.com/Vickytoria-lab">GitHub</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>

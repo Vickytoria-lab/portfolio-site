@@ -3,66 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects · Victoria Johnson</title>
-<meta name="description" content="Five documented analytics case studies: SQL retention analysis, revenue diagnostics, executive Power BI reporting, hospital operations, and public-sector trend analysis.">
+<title>Projects | Victoria Johnson</title>
+<meta name="description" content="Five data analysis projects by Victoria Johnson: customer retention, profitability, revenue, healthcare operations and public transport.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site"><div class="wrap nav">
-  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="on" href="projects.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div></header>
 
-<div class="hero" style="padding-bottom:56px"><div class="wrap">
-  <p class="eyebrow">Projects</p>
-  <h1>Five case studies, one standard</h1>
-  <p class="lede">Each project answers a business question, is packaged with a case study, executive summary, deck, and README, and only claims what the data supports. Quantitative claims carry a chip naming the artifact they come from.</p>
-</div></div>
-
-<section><div class="wrap">
-  <div class="cards">
-    <a class="card" href="olist.html">
-      <span class="tools">SQL · MySQL · Power BI</span>
-      <h3>Olist e-commerce retention</h3>
-      <p>Six SQL queries on a Brazilian marketplace of 93,358 customers. Found a 97% one-time purchase rate, ruled out product and service as causes, identified an 81-day reactivation window, and surfaced a seller-level retention gap of 4 to 8 times the platform average.</p>
-      <span class="go">Read the case</span>
-    </a>
-    <a class="card" href="vrinda.html">
-      <span class="tools">SQL · Excel</span>
-      <h3>Vrinda Store revenue diagnostics</h3>
-      <p>An order-level SQL investigation of 31,047 rows into a revenue decline, ending in a quantified recovery recommendation and a ten-page case study.</p>
-      <span class="go">Read the case</span>
-    </a>
-    <a class="card" href="superstore.html">
-      <span class="tools">Power BI · DAX</span>
-      <h3>Global Superstore CEO Profit Brief</h3>
-      <p>A four-page Power BI drill-down on a 51,000-row, 24-column retail dataset, built and presented as an executive profit briefing with a companion narrative deck.</p>
-      <span class="go">Read the case</span>
-    </a>
-    <a class="card" href="hospital.html">
-      <span class="tools">Excel · Power Query · Power BI</span>
-      <h3>Hospital ER operations</h3>
-      <p>An emergency department performance analysis built in Excel with an interactive dashboard, a data audit report, and an executive summary covering admissions, wait patterns, and departmental load.</p>
-      <span class="go">Read the case</span>
-    </a>
-    <a class="card" href="london-crime.html">
-      <span class="tools">Tableau · Excel</span>
-      <h3>London transport crime analysis</h3>
-      <p>Fifteen fiscal years of TfL crime data, 904,790 reported incidents, analyzed in Tableau across transport modes, seasonal patterns, and long-run trend, with resourcing recommendations.</p>
-      <span class="go">Read the case</span>
-    </a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Victoria Johnson</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</div></section>
+</header>
 
-<footer><div class="wrap foot">
-  <span>© 2026 Victoria Johnson</span>
-  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
-  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
-</div></footer>
+<section class="page-top">
+  <div class="container">
+    <h1>Projects</h1>
+    <p class="section-intro">Business questions about revenue, profit, customers and operations, answered with SQL, Power BI, Excel and Tableau. Each project ends with what I found and what I would recommend.</p>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+    <h2>Featured projects</h2>
+    <div class="projects">
+      <a class="project-card" href="superstore.html">
+        <img src="assets/superstore-2-profit-leakage.jpg" alt="Global Superstore profit leakage dashboard in Power BI">
+        <div class="card-body">
+          <span class="card-label">Retail &middot; Profitability</span>
+          <h3>Global Superstore: where profit is lost</h3>
+          <p>$12.64M in sales but only $1.47M profit. 30% of orders lose money, and orders discounted over 30% run at a -51% margin. I built a 4-page Power BI report to show where and why.</p>
+          <span class="card-tools">Power BI &middot; DAX &middot; Power Query</span>
+        </div>
+      </a>
+      <a class="project-card" href="vrinda.html">
+        <img src="assets/vrinda-dashboard.jpg" alt="Vrinda Store revenue dashboard in Power BI">
+        <div class="card-body">
+          <span class="card-label">Retail &middot; Revenue</span>
+          <h3>Vrinda Store: why revenue fell 20%</h3>
+          <p>Revenue dropped from Rs.1.83M in March to Rs.1.46M by November. I traced most of the drop to female customers on Amazon and Myntra and estimated a Rs.2M recovery from a targeted campaign.</p>
+          <span class="card-tools">SQL &middot; Excel &middot; Power BI</span>
+        </div>
+      </a>
+      <a class="project-card" href="olist.html">
+        <img src="assets/olist-dashboard.jpg" alt="Olist customer retention dashboard in Power BI">
+        <div class="card-body">
+          <span class="card-label">E-commerce &middot; Customer retention</span>
+          <h3>Olist: why 97% of customers never buy again</h3>
+          <p>I analysed 93,358 customers with SQL. Repeat buyers spend 92% more, and those who return take about 81 days, so I recommended a reactivation campaign around day 55 to 65.</p>
+          <span class="card-tools">MySQL &middot; Python &middot; Power BI</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container">
+    <h2>Additional projects</h2>
+    <p class="section-intro">The same approach applied to operations and the public sector.</p>
+    <div class="projects projects-two">
+      <a class="project-card" href="hospital.html">
+        <img src="assets/hospital-1-executive.jpg" alt="Hospital ER executive overview dashboard in Excel">
+        <div class="card-body">
+          <span class="card-label">Healthcare &middot; Operations</span>
+          <h3>Hospital ER: wait times and patient experience</h3>
+          <p>10,100 ER visits with a 31-minute average wait, and 8.81% of patients waited over an hour. I cleaned the data in Power Query and built 4 dashboards on waits, satisfaction and patient mix.</p>
+          <span class="card-tools">Excel &middot; Power Query &middot; Pivot Tables</span>
+        </div>
+      </a>
+      <a class="project-card" href="london-crime.html">
+        <img src="assets/london-1-executive.jpg" alt="London transport crime executive overview dashboard in Tableau">
+        <div class="card-body">
+          <span class="card-label">Public sector &middot; Transport</span>
+          <h3>London transport crime over 15 years</h3>
+          <p>904,790 reported crimes from 2009 to 2024. Buses record the most crimes of any mode, crime peaks in October and November, and yearly totals more than doubled. I built 3 Tableau dashboards with resourcing recommendations.</p>
+          <span class="card-tools">Tableau &middot; Excel</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-box">
+    <h2>Let's talk</h2>
+    <p>Open to remote Business Analyst, Data Analyst, BI and Sales or Revenue Operations roles. The fastest way to reach me is by email.</p>
+    <div class="buttons">
+      <a class="btn btn-white" href="mailto:Johnsonfisayo090@gmail.com">Email me</a>
+      <a class="btn btn-outline-white" href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Victoria Johnson</span>
+    <span>
+      <a href="mailto:Johnsonfisayo090@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+      <a href="https://github.com/Vickytoria-lab">GitHub</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -3,92 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Global Superstore CEO Profit Brief · Victoria Johnson</title>
-<meta name="description" content="A four-page Power BI drill-down built as an executive profit briefing on a 51,000-row global retail dataset.">
+<title>Global Superstore Profit Analysis | Victoria Johnson</title>
+<meta name="description" content="Power BI analysis of a global retailer: $12.64M in sales, 30% of orders losing money, and where discounting destroys profit.">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="case">
-<header class="site"><div class="wrap nav">
-  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="on" href="projects.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div></header>
+<body>
 
-<div class="case-head"><div class="wrap">
-  <p class="eyebrow">Case study 03</p>
-  <h1>Global Superstore: a profit brief for the CEO</h1>
-  <div class="meta">
-    <span><b>Tools</b> Power BI, DAX</span>
-    <span><b>Dataset</b> Global Superstore (Kaggle), 51,000 rows, 24 columns</span>
-    <span><b>Deliverables</b> Four-page dashboard, six-slide deck, exec summary, README</span>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Victoria Johnson</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</div></div>
+</header>
 
-<section><div class="wrap">
-  <h2>The question</h2>
-  <p>Revenue is not the same as profit. Framed as a briefing for a chief executive: where in this global retail business is profit actually made and lost, and which levers, discounting, delivery performance, product mix, deserve attention first?</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Approach</h2>
-  <p>A four-page Power BI report structured as a drill-down: an executive overview page first, then dedicated pages that decompose profit by segment, examine the relationship between discount bands and margin, and test how delivery time relates to outcomes. DAX measures drive the KPIs, and the companion deck pairs each dashboard page with a business question, the finding, and the recommendation, so the numbers are never presented without their so-what. <span class="chip">Superstore deck · exec summary</span></p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>What it demonstrates</h2>
-  <div class="finding">
-    <h3>Executive reporting, not just dashboarding</h3>
-    <p>The project is deliberately framed as a document a CEO would receive: one page of headline KPIs, then evidence pages behind each claim. Every figure on the deck is matched against the dashboard before publication. <span class="chip">Superstore deck</span></p>
+<section class="page-top case-top">
+  <div class="container">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="card-label">Retail &middot; Profitability</p>
+    <h1>Global Superstore: where profit is lost</h1>
+    <p class="question">The business sells $12.64M a year but keeps only $1.47M as profit. Where is the money being lost, and what should management change first?</p>
+    <div class="case-meta">
+      <span><strong>Tools:</strong> Power BI, DAX, Power Query</span>
+      <span><strong>Data:</strong> Global Superstore, public dataset (Kaggle)</span>
+      <span><strong>Size:</strong> 51,000 order lines, 24 columns</span>
+    </div>
   </div>
-  <div class="finding">
-    <h3>Discounts above 30% run a <span class="num">-51.27%</span> profit margin</h3>
-    <p>The discount-band analysis shows profit margin falling from 25.32% on undiscounted orders to -5.53% at 20 to 30 percent discount and -51.27% above 30 percent, where discounting stops being a growth lever and becomes the leak. <span class="chip">Superstore dashboard · Discount Strategy</span></p>
-  </div>
-  <div class="finding">
-    <h3><span class="num">$920.65K</span> of profit destroyed by unprofitable orders</h3>
-    <p>30.12% of orders lose money. The loss concentrates in Tables and Furniture, and the Central region alone accounts for $202K of losses, which points spending controls at specific sub-categories and regions rather than across the board. <span class="chip">Superstore dashboard · Profit Leakage</span></p>
-  </div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <h2>Dashboard</h2>
-  <figure class="shot">
-    <img src="superstore-1-customer-ops.jpg" alt="Customer and operational performance: segment profit, shipping methods, top customers" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Customer and operational performance: segment profit, shipping methods, top customers</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="superstore-2-profit-leakage.jpg" alt="Profit leakage diagnosis: which sub-categories, regions, and products destroy profit" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Profit leakage diagnosis: which sub-categories, regions, and products destroy profit</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="superstore-3-discount-strategy.jpg" alt="Discount strategy effectiveness: profit margin by discount band" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Discount strategy effectiveness: profit margin by discount band</figcaption>
-  </figure>
-  <h2 style="margin-top:44px">Artifacts</h2>
-  <ul class="artifact-list">
-    <li>Four-page Power BI report with DAX measures</li>
-    <li>Six-slide CEO Profit Brief deck</li>
-    <li>Executive summary and README</li>
-  </ul>
-  <div class="btn-row" style="margin-top:22px">
-    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/global-superstore">Open project folder</a>
-    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+<section class="page-content">
+  <div class="container">
+    <figure class="case-image">
+      <img src="assets/superstore-2-profit-leakage.jpg" alt="Profit leakage dashboard built in Power BI">
+      <figcaption>Profit leakage page: which sub-categories, regions and products lose money.</figcaption>
+    </figure>
   </div>
-</div></section>
+</section>
 
-<div class="wrap pager">
-  <a class="prev" href="vrinda.html"><small>Previous</small>Vrinda Store</a>
-  <a class="next" href="hospital.html"><small>Next</small>Hospital ER</a>
-</div>
+<section class="bg-light">
+  <div class="container">
+    <h2>Key numbers</h2>
+    <div class="key-numbers">
+      <div class="number-box"><strong>11.6%</strong><span>overall profit margin ($1.47M on $12.64M sales)</span></div>
+      <div class="number-box"><strong>30%</strong><span>of orders lose money</span></div>
+      <div class="number-box"><strong>$920K</strong><span>lost on unprofitable orders</span></div>
+      <div class="number-box"><strong>-51%</strong><span>margin on orders discounted over 30%</span></div>
+    </div>
+  </div>
+</section>
 
-<footer><div class="wrap foot">
-  <span>© 2026 Victoria Johnson</span>
-  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
-  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
-</div></footer>
+<section>
+  <div class="container case-text">
+    <h2>Why I picked this question</h2>
+    <p>When I worked in sales, discounts were the easiest way to close a deal. Nobody on the sales side saw what they did to profit afterwards. I wanted to build the report a CEO would need to see that: not just how much we sell, but which sales actually make money.</p>
+
+    <h2>How I approached it</h2>
+    <ol>
+      <li>Cleaned and shaped the data in Power Query.</li>
+      <li>Wrote DAX measures for profit margin, loss orders, total loss and profit by discount band.</li>
+      <li>Built a 4-page Power BI report: an overview, customer and shipping performance, profit leakage, and discount strategy.</li>
+      <li>Summarised the findings in a short presentation written for a CEO.</li>
+    </ol>
+
+    <h2>What I found</h2>
+
+    <h3>1. Heavy discounts turn sales into losses</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Discount</th><th class="num">Sales</th><th class="num">Profit</th><th class="num">Margin</th></tr></thead>
+      <tbody>
+        <tr><td>No discount</td><td class="num">$6,992,411</td><td class="num">$1,770,695</td><td class="num">25.32%</td></tr>
+        <tr><td>0 to 10%</td><td class="num">$1,962,619</td><td class="num">$338,189</td><td class="num">17.23%</td></tr>
+        <tr><td>10 to 20%</td><td class="num">$1,757,261</td><td class="num">$173,255</td><td class="num">9.86%</td></tr>
+        <tr><td>20 to 30%</td><td class="num">$382,555</td><td class="num">-$21,156</td><td class="num">-5.53%</td></tr>
+        <tr class="highlight"><td>Over 30%</td><td class="num">$1,547,656</td><td class="num">-$793,526</td><td class="num">-51.27%</td></tr>
+      </tbody>
+    </table></div>
+    <p>Margin drops with every discount band. Past 20% the business loses money, and orders discounted over 30% lose about half of what they sell. Taken together, discounted orders lost $303K overall.</p>
+
+    <h3>2. Losses are concentrated, not spread evenly</h3>
+    <p><strong>By product:</strong> Tables lose the most ($144K), followed by Bookcases ($101K), Phones ($96K) and Chairs ($96K). Furniture is the worst category at $370K in losses, and it also gets the highest average discount (16.8%).</p>
+    <p><strong>By region:</strong> Central loses the most ($202K), then South ($157K) and EMEA ($123K).</p>
+
+    <h3>3. Where the profit comes from</h3>
+    <p>The Consumer segment brings in $749K profit, more than Corporate ($441K) and Home Office ($277K). Standard Class shipping earns the most profit ($891K). Faster shipping didn't show a clear link to higher profit.</p>
+
+    <h2>What I would recommend</h2>
+    <ol>
+      <li><strong>Cap discounts at 20%</strong> and require manager approval above that. This is where orders start losing money.</li>
+      <li><strong>Review pricing and discounts on Tables and Bookcases</strong> before cutting them. They drive the biggest losses.</li>
+      <li><strong>Start with Central and South regions</strong>, where the losses are largest, and check what discounts are being given there.</li>
+    </ol>
+
+    <h2>What I'd look at next</h2>
+    <p>The data doesn't include product costs or the reason each discount was given. With those, I could separate discounts that win repeat customers from ones that just give margin away.</p>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container">
+    <h2>More from the report</h2>
+    <div class="gallery">
+      <figure class="case-image">
+        <img src="assets/superstore-3-discount-strategy.jpg" alt="Discount strategy page in Power BI" loading="lazy">
+        <figcaption>Discount strategy: sales, profit and margin by discount band.</figcaption>
+      </figure>
+      <figure class="case-image">
+        <img src="assets/superstore-1-customer-ops.jpg" alt="Customer and operational performance page in Power BI" loading="lazy">
+        <figcaption>Customer and operational performance: profit by segment and shipping method.</figcaption>
+      </figure>
+    </div>
+    <div class="project-links" style="margin-top: 32px;">
+      <a class="btn btn-primary" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/global-superstore">View files on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="next-section">
+  <div class="container next-project">
+    <a href="projects.html">&larr; All projects</a>
+    <a href="vrinda.html">Next project: Vrinda Store &rarr;</a>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-box">
+    <h2>Let's talk</h2>
+    <p>Open to remote Business Analyst, Data Analyst, BI and Sales or Revenue Operations roles. The fastest way to reach me is by email.</p>
+    <div class="buttons">
+      <a class="btn btn-white" href="mailto:Johnsonfisayo090@gmail.com">Email me</a>
+      <a class="btn btn-outline-white" href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Victoria Johnson</span>
+    <span>
+      <a href="mailto:Johnsonfisayo090@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+      <a href="https://github.com/Vickytoria-lab">GitHub</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>

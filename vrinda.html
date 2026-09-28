@@ -3,77 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vrinda Store Revenue Diagnostics · Victoria Johnson</title>
-<meta name="description" content="A 31,047-row SQL investigation into a retail revenue decline, ending in a quantified recovery recommendation.">
+<title>Vrinda Store Revenue Analysis | Victoria Johnson</title>
+<meta name="description" content="SQL and Power BI analysis of why an online clothing store's revenue fell 20% in 2022, and how to win it back.">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="case">
-<header class="site"><div class="wrap nav">
-  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="on" href="projects.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div></header>
+<body>
 
-<div class="case-head"><div class="wrap">
-  <p class="eyebrow">Case study 02</p>
-  <h1>Vrinda Store: diagnosing a revenue decline</h1>
-  <div class="meta">
-    <span><b>Tools</b> SQL, Excel</span>
-    <span><b>Dataset</b> Vrinda Store orders (public), 31,047 rows</span>
-    <span><b>Deliverables</b> SQL investigation, ten-page case study, deck, README</span>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Victoria Johnson</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</div></div>
+</header>
 
-<section><div class="wrap">
-  <h2>The question</h2>
-  <p>Order-level data for an online clothing store showed revenue falling. The question: where exactly is the decline concentrated, across channels, categories, geography, and customer segments, and what would it take to recover it?</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Approach</h2>
-  <p>A full SQL investigation over 31,047 order rows, segmenting revenue by sales channel, product category, demographic group, and order status, then isolating which segments account for the decline rather than averaging it away. The findings and the recovery math are documented step by step in a ten-page case study so a reviewer can trace every figure back to a query. <span class="chip">Vrinda case study</span></p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Outcome</h2>
-  <div class="finding">
-    <h3>A quantified recovery recommendation of roughly <span class="num">Rs. 2M</span></h3>
-    <p>The investigation ends in a recovery estimate of approximately Rs. 2 million, built from the identified decline segments, with the supporting math shown in the case study and presentation deck rather than asserted. <span class="chip">Vrinda case study · deck</span></p>
+<section class="page-top case-top">
+  <div class="container">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="card-label">Retail &middot; Revenue</p>
+    <h1>Vrinda Store: why revenue fell 20%</h1>
+    <p class="question">An online clothing store saw monthly revenue fall by 20% between March and November 2022. Where exactly did the drop come from, and what would it take to win it back?</p>
+    <div class="case-meta">
+      <span><strong>Tools:</strong> SQL, Power BI, Excel</span>
+      <span><strong>Data:</strong> Vrinda Store 2022 orders, public dataset</span>
+      <span><strong>Size:</strong> 31,047 order rows</span>
+    </div>
   </div>
-  <div class="caveat"><b>What this analysis does not claim.</b> This is a public practice dataset. The recovery figure is a modeled estimate under stated assumptions, not a measured business result, and the case study frames it that way.</div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <h2>Dashboard</h2>
-  <figure class="shot">
-    <img src="vrinda-dashboard.jpg" alt="Revenue performance dashboard: Rs. 21.2M total revenue, the March-to-November decline, channel and category breakdowns" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Revenue performance dashboard: Rs. 21.2M total revenue, the March-to-November decline, channel and category breakdowns</figcaption>
-  </figure>
-  <h2 style="margin-top:44px">Artifacts</h2>
-  <ul class="artifact-list">
-    <li>SQL investigation file</li>
-    <li>Ten-page case study with quantified recommendation</li>
-    <li>Seven-slide presentation deck and README</li>
-  </ul>
-  <div class="btn-row" style="margin-top:22px">
-    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/Vrinda">Open project folder</a>
-    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+<section class="page-content">
+  <div class="container">
+    <figure class="case-image">
+      <img src="assets/vrinda-dashboard.jpg" alt="Vrinda Store 2022 revenue dashboard built in Power BI">
+      <figcaption>Power BI dashboard with filters for age group, gender and order status.</figcaption>
+    </figure>
   </div>
-</div></section>
+</section>
 
-<div class="wrap pager">
-  <a class="prev" href="olist.html"><small>Previous</small>Olist retention</a>
-  <a class="next" href="superstore.html"><small>Next</small>Global Superstore</a>
-</div>
+<section class="bg-light">
+  <div class="container">
+    <h2>Key numbers</h2>
+    <div class="key-numbers">
+      <div class="number-box"><strong>Rs.21.2M</strong><span>total revenue in 2022</span></div>
+      <div class="number-box"><strong>-20%</strong><span>monthly revenue, March to November</span></div>
+      <div class="number-box"><strong>22 to 30%</strong><span>drop in spending by female customers</span></div>
+      <div class="number-box"><strong>~Rs.2M</strong><span>estimated yearly revenue a targeted campaign could recover</span></div>
+    </div>
+  </div>
+</section>
 
-<footer><div class="wrap foot">
-  <span>© 2026 Victoria Johnson</span>
-  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
-  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
-</div></footer>
+<section>
+  <div class="container case-text">
+    <h2>Why I picked this question</h2>
+    <p>"Sales are down" was a sentence I heard often in sales, usually with no detail on who stopped buying or where. A total alone doesn't tell you what to fix. I wanted to break a revenue drop down until it pointed to a specific group of customers the business could actually act on.</p>
+
+    <h2>How I approached it</h2>
+    <ol>
+      <li>Loaded the 31,047 order rows into SQL and checked the data before analysing it.</li>
+      <li>Used SQL to break monthly revenue down by sales channel, product category, gender and age group.</li>
+      <li>Compared March (the peak) with November (the low) for each group to see which ones fell the most.</li>
+      <li>Built a one-page Power BI dashboard with filters so a manager could explore it themselves.</li>
+    </ol>
+
+    <h2>What I found</h2>
+
+    <h3>1. Revenue peaked in March and slid for the rest of the year</h3>
+    <p>Monthly revenue went from <strong>Rs.1.83M in March</strong> to <strong>Rs.1.46M in November</strong>, a fall of about 20% (around Rs.363K a month). It levelled off in December.</p>
+
+    <h3>2. The drop was concentrated, not spread across the business</h3>
+    <ul>
+      <li><strong>Channels:</strong> most of the decline came from Amazon and Myntra, two of the three biggest channels.</li>
+      <li><strong>Products:</strong> Sets and Kurtas, the two best-selling categories (Rs.10.5M and Rs.5.0M), fell the most.</li>
+      <li><strong>Customers:</strong> spending by women dropped 22 to 30% across every age group, while spending by men dropped only 5 to 8%.</li>
+    </ul>
+
+    <h3>3. Women are the core of the business</h3>
+    <p>Women brought in about 64% of all revenue. So when their spending fell, the whole store felt it. The rest of the business was fairly stable, with a 93% delivery rate and an average order value of Rs.744.</p>
+
+    <h2>What I would recommend</h2>
+    <ol>
+      <li><strong>Run a win-back campaign for female customers on Amazon and Myntra</strong>, focused on ethnic wear (Sets and Kurtas), where the drop was largest.</li>
+      <li><strong>Test it before rolling it out.</strong> Send it to one group first and compare against customers who didn't get it.</li>
+      <li><strong>Track revenue by gender and channel every month</strong> so a drop like this is spotted in weeks, not at the end of the year.</li>
+    </ol>
+    <p>I estimated that bringing back part of the lost spending from this group could recover around <strong>Rs.2M a year</strong>, about 10% of total revenue. This is an estimate based on the 2022 numbers, so the test in step 2 would show the real effect.</p>
+
+    <h2>What I'd look at next</h2>
+    <p>The data doesn't show prices, promotions or competitor activity, so I can't say <em>why</em> women stopped buying. Next I would look at whether prices or discounts changed on Amazon and Myntra during those months.</p>
+
+    <div class="project-links">
+      <a class="btn btn-primary" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/vrinda">View SQL and files on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="next-section bg-light">
+  <div class="container next-project">
+    <a href="superstore.html">&larr; Previous: Global Superstore</a>
+    <a href="olist.html">Next project: Olist &rarr;</a>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-box">
+    <h2>Let's talk</h2>
+    <p>Open to remote Business Analyst, Data Analyst, BI and Sales or Revenue Operations roles. The fastest way to reach me is by email.</p>
+    <div class="buttons">
+      <a class="btn btn-white" href="mailto:Johnsonfisayo090@gmail.com">Email me</a>
+      <a class="btn btn-outline-white" href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Victoria Johnson</span>
+    <span>
+      <a href="mailto:Johnsonfisayo090@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+      <a href="https://github.com/Vickytoria-lab">GitHub</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>

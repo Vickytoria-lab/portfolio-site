@@ -3,98 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hospital ER Operations · Victoria Johnson</title>
-<meta name="description" content="An emergency department operations analysis built in Excel with an interactive dashboard, data audit report, and executive summary.">
+<title>Hospital ER Operations | Victoria Johnson</title>
+<meta name="description" content="Excel analysis of 10,100 emergency room visits: wait times, patient satisfaction and patient mix, with a documented data cleaning process.">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="case">
-<header class="site"><div class="wrap nav">
-  <a class="mark" href="index.html">VJ<b>_</b>analytics</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="on" href="projects.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div></header>
+<body>
 
-<div class="case-head"><div class="wrap">
-  <p class="eyebrow">Case study 04</p>
-  <h1>Hospital ER: operations under load</h1>
-  <div class="meta">
-    <span><b>Tools</b> Excel, Power Query, Power BI</span>
-    <span><b>Dataset</b> Public hospital emergency department records</span>
-    <span><b>Deliverables</b> Interactive dashboard, data audit report, exec summary, deck, README</span>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Victoria Johnson</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</div></div>
+</header>
 
-<section><div class="wrap">
-  <h2>The question</h2>
-  <p>Emergency departments live or die on throughput: how long patients wait, who gets admitted, and which departments carry the load. The question here: what do admissions, wait patterns, and departmental referrals reveal about where an ER's operational pressure sits, and where would a manager intervene first?</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>Approach</h2>
-  <p>The raw records were cleaned and shaped in Power Query, then audited before analysis: the data audit report documents the quality checks, assumptions, and exclusions made before a single chart was built. The interactive Excel dashboard tracks admission status, wait time patterns, patient demographics, and departmental referral load, and the executive summary walks a non-technical reader from the business question to three findings and recommendations. <span class="chip">Hospital audit report · exec summary</span></p>
-</div></section>
-
-<section><div class="wrap">
-  <h2>What it demonstrates</h2>
-  <div class="finding">
-    <h3>Data quality work shown, not hidden</h3>
-    <p>Most portfolio dashboards skip straight to visuals. This project publishes its audit trail: what was checked, what was excluded, and why, so every downstream figure has a documented basis. <span class="chip">Hospital audit report</span></p>
+<section class="page-top case-top">
+  <div class="container">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="card-label">Healthcare &middot; Operations</p>
+    <h1>Hospital ER: wait times and patient experience</h1>
+    <p class="question">Where do patients wait longest, what affects how satisfied they are, and where should an ER manager step in first?</p>
+    <div class="case-meta">
+      <span><strong>Tools:</strong> Excel, Power Query, Pivot Tables</span>
+      <span><strong>Data:</strong> Hospital emergency room visits, public dataset</span>
+      <span><strong>Size:</strong> 10,100 visits</span>
+    </div>
   </div>
-  <div class="finding">
-    <h3><span class="num">10,100</span> visits, a 31-minute average wait, and an 8.81% long-wait tail</h3>
-    <p>The dashboard tracks a 42.45% admission rate and 8.99% readmission rate, and isolates the 8.81% of visits waiting over 60 minutes, then breaks that tail down by department, shift, triage level, and hour so a manager can see where the queue actually forms. <span class="chip">Hospital dashboard · Wait Time page</span></p>
-  </div>
-  <div class="finding">
-    <h3>Operations analysis outside sales</h3>
-    <p>Wait times, admission mix, and departmental load are operational KPIs, not revenue ones. The project demonstrates the same question-to-recommendation discipline applied to a healthcare operations setting. <span class="chip">Hospital exec summary</span></p>
-  </div>
-  <div class="caveat"><b>What this analysis does not claim.</b> This is a public practice dataset; no real hospital's operations were assessed and no implementation results are claimed. Specific KPI figures live in the executive summary and dashboard rather than being quoted here without their context.</div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <h2>Dashboard</h2>
-  <figure class="shot">
-    <img src="hospital-1-executive.jpg" alt="Executive overview: 10,100 visits, wait time, admission and readmission rates" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Executive overview: 10,100 visits, wait time, admission and readmission rates</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="hospital-2-wait-time.jpg" alt="Wait time analysis by department, shift, triage level, and hour of day" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Wait time analysis by department, shift, triage level, and hour of day</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="hospital-3-satisfaction.jpg" alt="Patient satisfaction analysis across departments, shifts, and wait time groups" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Patient satisfaction analysis across departments, shifts, and wait time groups</figcaption>
-  </figure>
-  <figure class="shot">
-    <img src="hospital-4-demographics.jpg" alt="Patient demographics: age, gender, and departmental profiles" loading="lazy" onerror="this.closest('figure').style.display='none'">
-    <figcaption>Patient demographics: age, gender, and departmental profiles</figcaption>
-  </figure>
-  <h2 style="margin-top:44px">Artifacts</h2>
-  <ul class="artifact-list">
-    <li>Interactive Excel dashboard workbook</li>
-    <li>Data audit report</li>
-    <li>Executive summary with KPI and skills tables</li>
-    <li>Eight-slide presentation deck and README</li>
-  </ul>
-  <div class="btn-row" style="margin-top:22px">
-    <a class="btn solid" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/hospital-er">Open project folder</a>
-    <a class="btn ghost" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio">Full repository</a>
+<section class="page-content">
+  <div class="container">
+    <figure class="case-image">
+      <img src="assets/hospital-1-executive.jpg" alt="Hospital ER executive overview dashboard built in Excel">
+      <figcaption>Executive overview: visits, wait time, satisfaction, admission and readmission rates.</figcaption>
+    </figure>
   </div>
-</div></section>
+</section>
 
-<div class="wrap pager">
-  <a class="prev" href="superstore.html"><small>Previous</small>Global Superstore</a>
-  <a class="next" href="london-crime.html"><small>Next</small>London Transport Crime</a>
-</div>
+<section class="bg-light">
+  <div class="container">
+    <h2>Key numbers</h2>
+    <div class="key-numbers">
+      <div class="number-box"><strong>31 min</strong><span>average wait time</span></div>
+      <div class="number-box"><strong>8.81%</strong><span>of patients waited over an hour</span></div>
+      <div class="number-box"><strong>42.45%</strong><span>of patients were admitted</span></div>
+      <div class="number-box"><strong>5.06 / 10</strong><span>average satisfaction score</span></div>
+    </div>
+  </div>
+</section>
 
-<footer><div class="wrap foot">
-  <span>© 2026 Victoria Johnson</span>
-  <span class="mono"><a href="mailto:Johnsonfisayo090@gmail.com">Johnsonfisayo090@gmail.com</a></span>
-  <span><a href="https://github.com/Vickytoria-lab">GitHub</a> · <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a></span>
-</div></footer>
+<section>
+  <div class="container case-text">
+    <h2>Why I picked this question</h2>
+    <p>I wanted a project outside sales to show I can apply the same thinking to operations. An ER is a good test: every number is a real bottleneck, and the manager needs to know where to act first, not just see averages.</p>
+
+    <h2>How I approached it</h2>
+    <ol>
+      <li>Cleaned the raw data in Power Query and kept a log of every fix.</li>
+      <li>Built the KPIs with Pivot Tables: visits, wait time, admission and readmission rates, satisfaction.</li>
+      <li>Created 4 linked Excel dashboards: overview, wait times, satisfaction and patient demographics.</li>
+      <li>Wrote a short executive summary with findings and recommendations.</li>
+    </ol>
+
+    <h2>Cleaning the data first</h2>
+    <p>The raw file had problems that would have given wrong answers if I had gone straight to charts:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Problem</th><th>What I did</th></tr></thead>
+      <tbody>
+        <tr><td>Broken text in the gender column, e.g. "Femaleemaleemale"</td><td>Standardised to Female / Male</td></tr>
+        <tr><td>Impossible wait times (999 minutes and negative values)</td><td>Removed 30 records (0.30%)</td></tr>
+        <tr class="highlight"><td>7,088 visits with no satisfaction score</td><td>Kept them blank instead of filling them in</td></tr>
+      </tbody>
+    </table></div>
+    <p>The last one was the most important decision. A patient who didn't leave a score isn't an unhappy patient, so filling the blanks with zeros or averages would have distorted the results. Satisfaction figures are based only on patients who actually responded.</p>
+
+    <h2>What I found</h2>
+
+    <h3>1. The average wait hides the real problem</h3>
+    <p>The average wait is 31 minutes, and it barely changes by department (from about 29 minutes in Gastroenterology to 33 in Cardiology), shift or day of the week. The problem is the tail: <strong>8.81% of patients waited over an hour</strong>, and the longest wait was 199 minutes. Some physicians also had noticeably longer average waits, up to 36 minutes.</p>
+
+    <h3>2. Longer waits didn't mean lower satisfaction</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Wait time</th><th class="num">Average satisfaction</th></tr></thead>
+      <tbody>
+        <tr><td>0 to 15 min</td><td class="num">4.91</td></tr>
+        <tr><td>16 to 30 min</td><td class="num">5.06</td></tr>
+        <tr><td>31 to 60 min</td><td class="num">5.09</td></tr>
+        <tr class="highlight"><td>61 to 120 min</td><td class="num">5.37</td></tr>
+        <tr><td>Over 120 min</td><td class="num">5.36</td></tr>
+      </tbody>
+    </table></div>
+    <p>I expected satisfaction to drop as waits got longer. It didn't. Patients who waited over an hour actually scored slightly higher. So cutting wait times alone probably won't fix satisfaction.</p>
+
+    <h3>3. Satisfaction depends more on the department</h3>
+    <p>Gastroenterology (5.75) and Cardiology (5.55) scored highest. Physiotherapy (4.56), Emergency (4.71) and Neurology (4.71) scored lowest. Only 37.4% of patients who responded gave a score of 7 or higher.</p>
+
+    <h3>4. Who comes in, and when</h3>
+    <p>The ER sees about 28 visits a day. Mondays are the busiest (1,494 visits) and the night shift sees the most patients. The average patient age is 45, and the split between women and men is almost even.</p>
+
+    <h2>What I would recommend</h2>
+    <ol>
+      <li><strong>Track the long-wait group, not just the average.</strong> Report the share of patients waiting over 60 minutes every week and look at those cases one by one.</li>
+      <li><strong>Start satisfaction work in Physiotherapy, Emergency and Neurology</strong>, which score lowest.</li>
+      <li><strong>Collect more feedback.</strong> Most visits had no satisfaction score, so a simple survey at discharge would make this data far more reliable.</li>
+      <li><strong>Staff for volume:</strong> plan extra cover for Mondays and night shifts.</li>
+    </ol>
+
+    <h2>What I'd look at next</h2>
+    <p>With staffing data, I could check whether long waits happen when fewer doctors are on shift. I'd also want to know why patients who waited longer scored higher, for example whether they were more serious cases who got more attention once seen.</p>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container">
+    <h2>More from the dashboards</h2>
+    <div class="gallery">
+      <figure class="case-image">
+        <img src="assets/hospital-2-wait-time.jpg" alt="Wait time analysis dashboard in Excel" loading="lazy">
+        <figcaption>Wait times by department, day, shift, triage level, physician and hour.</figcaption>
+      </figure>
+      <figure class="case-image">
+        <img src="assets/hospital-3-satisfaction.jpg" alt="Patient satisfaction dashboard in Excel" loading="lazy">
+        <figcaption>Satisfaction by department, shift, triage level, physician and wait time.</figcaption>
+      </figure>
+      <figure class="case-image">
+        <img src="assets/hospital-4-demographics.jpg" alt="Patient demographics dashboard in Excel" loading="lazy">
+        <figcaption>Patient demographics: age, gender and department.</figcaption>
+      </figure>
+    </div>
+    <div class="project-links" style="margin-top: 32px;">
+      <a class="btn btn-primary" href="https://github.com/Vickytoria-lab/victoria_analytics_portfolio/tree/main/hospital-er">View files on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="next-section">
+  <div class="container next-project">
+    <a href="olist.html">&larr; Previous: Olist</a>
+    <a href="london-crime.html">Next project: London transport crime &rarr;</a>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-box">
+    <h2>Let's talk</h2>
+    <p>Open to remote Business Analyst, Data Analyst, BI and Sales or Revenue Operations roles. The fastest way to reach me is by email.</p>
+    <div class="buttons">
+      <a class="btn btn-white" href="mailto:Johnsonfisayo090@gmail.com">Email me</a>
+      <a class="btn btn-outline-white" href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Victoria Johnson</span>
+    <span>
+      <a href="mailto:Johnsonfisayo090@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/victoria-johnson-a35b73405">LinkedIn</a>
+      <a href="https://github.com/Vickytoria-lab">GitHub</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
